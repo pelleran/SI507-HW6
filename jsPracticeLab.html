@@ -9,20 +9,21 @@
 	// It is possible you have seen this before -- if so, that's fine, if not, that's fine, too
 
 	// Output..
-	alert("hello");
+	//alert("hello");
 	console.log("hello in console");
 
 	function displayInformation () {
-		document.querySelector('h1').innerHTML = "A name";
+		document.querySelector('h1').innerHTML = "Andrea";
 		document.querySelector("#URL").innerHTML = document.documentURI; // URI means something like URL -- slight differences for specificity
 		document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length
+		document.querySelector('#newtime').innerHTML = new Date();
 		document.querySelector('#time').innerHTML = new Date();
 		var body = document.querySelector('body')
 		body.style.background = "#CCEE00";
 		// One place to find color option codes: https://www.w3schools.com/colors/colors_picker.asp
-		body.style.margin = "10%";		
+		body.style.margin = "10%";
 	}
-	//When someone uses the keyboard shortcut to copy the words "University of Michigan" then add the words "Go Blue" to the final div.  Each occurence should be on a separate line. 
+	//When someone uses the keyboard shortcut to copy the words "University of Michigan" then add the words "Go Blue" to the final div.  Each occurence should be on a separate line.
 	//Note that this code must be outside the other function above
 	function copyFunction(){
 		document.querySelector('#cheer').innerHTML += "Go blue!<br>"
@@ -44,8 +45,9 @@ p{
 </head>
 <body onload = "displayInformation();">
 	<h1>A name or title goes here</h1>
-
-
+	<p>
+		The current date/time is: <span id = "newtime"></span><br/>
+	</p>
 	<ol>
 		<li>Apples</li>
 		<li>Bananas</li>

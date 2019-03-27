@@ -25,14 +25,14 @@ This experience is *not in any way* about becoming an expert JavaScript programm
 
 ### Specifically
 
-Below are a bunch of questions and indications of things to do. For each indication of something to do with code, there is also an accompanying question to answer or brief explanation to give. 
+Below are a bunch of questions and indications of things to do. For each indication of something to do with code, there is also an accompanying question to answer or brief explanation to give.
 
 **To complete and submit this assignment, you should:**
 
-* Fork (and clone) this repository
-* Add our instructional team as a collaborator to your fork (see instructions for adding collaborators on Canvas)
+* done - Fork (and clone) this repository
+* done - Add our instructional team as a collaborator to your fork (see instructions for adding collaborators on Canvas)
 * Edit this `README.md` file with answers to the questions/prompts, briefly, using Markdown formatting so that the questions appear in bulletpoints and the answers appear clearly below each respective question, *not* as bulletpoints.
-* Add all names of those who worked on this (as indicated below)
+* done - Add all names of those who worked on this (as indicated below)
 * Make the changes that are indicated below to each of the `.html` files with JavaScript programs provided. (You'll probably do this concurrently with answering questions)
 * Commit (as you go) and push your changes to all three files to your GitHub forked repository.
 * Submit a link to your repository on Canvas. (This HW doesn't have an autograder -- it will be graded by hand/by humans this time.)
@@ -46,7 +46,7 @@ Below are a bunch of questions and indications of things to do. For each indicat
 
 * In answering questions, assume all of the questions include a *explain briefly* note -- you do NOT have to, and should not, write extended paragraphs. Be as concise as you can and explain in your own words. Don't worry about "whether it's enough" -- just worry about conveying your understanding so you can read it later, or even give it to someone else, and the answers will help/make sense.
 
-* It is not acceptable to copy and paste answers from the internet and submit them as your own. If you cite things, make sure you provide a citation, including to links. If you get information from a resource and rephrase it so you're basically explaining an idea, that's just fine for an explanatory purpose in this assignment, but you *must* cite any quotes or examples that aren't yours. 
+* It is not acceptable to copy and paste answers from the internet and submit them as your own. If you cite things, make sure you provide a citation, including to links. If you get information from a resource and rephrase it so you're basically explaining an idea, that's just fine for an explanatory purpose in this assignment, but you *must* cite any quotes or examples that aren't yours.
 
 * **For grading:** we are grading on...
 	* Following the instructions
@@ -57,13 +57,9 @@ Below are a bunch of questions and indications of things to do. For each indicat
 
 ### Names of people you have worked with on this assignment
 * List everyone's names and uniqnames who have worked on this assignment with you, **including your own name, but make sure YOUR name is first and bold**
-* Like this: 
-* **Jackie Cohen (jczetta)**
-* Yea-Ree Chang (cyearee)
-* Ruchi Ookalkar (ruchido)
-* Innocent Obi (innoobi)
-* Zhen Wang (alejwang)
-* etc.
+* Like this:
+* **Andrea Pellerito (pelleran)**
+* I actually worked on this alone. I was sitting at a group table during the class session this was introduced, but the table was already full and I didn't hear what they were working on, and they didn't share the work they did with me.
 
 ## Questions & code instructions
 
@@ -79,17 +75,64 @@ Some JavaScript code
 
 * **What does a code comment look like in JavaScript? What character/s do you have to put before a comment?**
 
+A code comment looks similar to in Python, in that the text is also "greyed out." However, a comment begins with // (in Python, it's #). Example:
+
+```js
+	// Output..
+```
+
 * **Explain what needs to happen to get a JavaScript program to "run", given the JavaScript you've seen in this assignment.**
+
+To get a JavaScript program to "run" the JavaScript program, the function must be called by the HTML code. It is similar to Python in calling a function. Example, calling the display function:
+
+```html
+	<body onload = "displayInformation();">
+```
 
 * **What functions in JavaScript seem to be similar in function to the `print` function in Python? (There are two.) Why might you use one and not the other? Explain briefly.**
 
+The two functions in JavaScript that are similar to print in Python are: console.log() and alert(). console.log() is for when you want to print to the console (so the regular user will not see the message, but if you open the inspector, you can see the log). alert() is for when you want to display something in the page, the alert box opens and it must be dismissed. Unlike console.log(), alert() could be seen without having to open the inspector.
+
+```js
+	alert("hello");
+	console.log("hello in console");
+```
+
 * **What code would have to comment out to get rid of the pop-up box when you load the page? (Related to the last question.) Do that in the code file, and then, add code so that a text box will appear that contains the current date and time! *HINT:* Look through the rest of the code first...**
+
+The code you would have to comment out is: 	alert("hello");
+
+Code to get text box to appear, there is probably more than one way to do this. However, I chose to update the JavaScript to include a new selector and then add a new paragraph to print the time. The paragraph tag is styled to be a text box already. The querySelector() only returns the first element, so that is why I had to add the JavaScript as well as the HTML, or else the location that already existed called "time", would no longer show the time.
+
+```js
+		document.querySelector('#newtime').innerHTML = new Date();
+```
+
+```html
+<p>
+	The current date/time is: <span id = "newtime"></span><br/>
+</p>
+```
 
 * **How can you put your own name at the top where it currently says "A name"? Explain very briefly how to do so, and replace `A name` in the web page with your own name.**
 
+To put your own name at the top, you can look at the HTML and see that the text in the H1 is actually not the text that is printing. So, you look at the JavaScript and find this code that replaces the H1 by selecting it.
+
+```js
+	document.querySelector('h1').innerHTML = "A name";
+```
+
+	change it to
+
+```js
+	document.querySelector('h1').innerHTML = "Andrea";
+```
+
 * **What does the word `document` represent in this code? Explain briefly.**
 
-* **What is happening in line 12 ( 
+"Document" represents the current .html file aka the web page.
+
+* **What is happening in line 12 (
 		`document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length`
 )? Explain, briefly (<= 2 sentences).**
 
