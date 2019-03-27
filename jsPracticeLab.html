@@ -10,13 +10,14 @@
 
 	// Output..
 	//alert("hello");
+	alert(new Date());
+
 	console.log("hello in console");
 
 	function displayInformation () {
 		document.querySelector('h1').innerHTML = "Andrea";
 		document.querySelector("#URL").innerHTML = document.documentURI; // URI means something like URL -- slight differences for specificity
 		document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length
-		document.querySelector('#newtime').innerHTML = new Date();
 		document.querySelector('#time').innerHTML = new Date();
 		var body = document.querySelector('body')
 		body.style.background = "#CCEE00";
@@ -29,14 +30,23 @@
 		document.querySelector('#cheer').innerHTML += "Go blue!<br>"
 	}
 
+	function copyFunctionMcGill(){
+		document.querySelector('#ocanada').innerHTML += "O Canada<br>"
+	}
+
 	function handleClick(){
 		alert("hello");
 	}
+
+	function equinox(){
+		alert("March 20, 2019")
+	}
+
 </script>
 <style>
 p{
-	background-color: #b3b3b3;
-	border: 3px solid #FFFFFF;
+	background-color: #4d8cbc;
+	border: 3px solid #053a63;
 	padding: 3%;
 	font-size: 1.1em;
 	line-height: 1.5;
@@ -45,9 +55,6 @@ p{
 </head>
 <body onload = "displayInformation();">
 	<h1>A name or title goes here</h1>
-	<p>
-		The current date/time is: <span id = "newtime"></span><br/>
-	</p>
 	<ol>
 		<li>Apples</li>
 		<li>Bananas</li>
@@ -64,15 +71,17 @@ p{
 	<ul>
 		<li>Kent State</li>
 		<li>University of Pittsburgh</li>
-		<li>McGill University</li>
+		<li oncopy = "copyFunctionMcGill()">McGill University</li>
 		<li>California State University Long Beach</li>
 		<li oncopy="copyFunction()">University of Michigan</li>
 	</ul>
 	<div id="cheer">
-
+	</div>
+	<div id="ocanada">
 	</div>
 
 	<button onclick=handleClick() id="wow-button">Wow</button>
+	<button onclick=equinox() id="equinox-button">Spring Equinox 2019</button>
 
 </body>
 </html>

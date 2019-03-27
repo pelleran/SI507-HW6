@@ -83,7 +83,7 @@ A code comment looks similar to in Python, in that the text is also "greyed out.
 
 * **Explain what needs to happen to get a JavaScript program to "run", given the JavaScript you've seen in this assignment.**
 
-To get a JavaScript program to "run" the JavaScript program, the function must be called by the HTML code. It is similar to Python in calling a function. Example, calling the display function:
+To get a JavaScript program to "run" the JavaScript program, the method or function must be called. It is similar to Python in calling a function or method. Example, calling the display function:
 
 ```html
 	<body onload = "displayInformation();">
@@ -102,16 +102,10 @@ The two functions in JavaScript that are similar to print in Python are: console
 
 The code you would have to comment out is: 	alert("hello");
 
-Code to get text box to appear, there is probably more than one way to do this. However, I chose to update the JavaScript to include a new selector and then add a new paragraph to print the time. The paragraph tag is styled to be a text box already. The querySelector() only returns the first element, so that is why I had to add the JavaScript as well as the HTML, or else the location that already existed called "time", would no longer show the time.
+In order to get the alert/text box to contain the current date and time, I looked to where the paragraph further down includes the date, with the function Date(). So I combined the alert with the date function.
 
 ```js
-		document.querySelector('#newtime').innerHTML = new Date();
-```
-
-```html
-<p>
-	The current date/time is: <span id = "newtime"></span><br/>
-</p>
+			alert(new Date());
 ```
 
 * **How can you put your own name at the top where it currently says "A name"? Explain very briefly how to do so, and replace `A name` in the web page with your own name.**
@@ -136,11 +130,43 @@ To put your own name at the top, you can look at the HTML and see that the text 
 		`document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length`
 )? Explain, briefly (<= 2 sentences).**
 
+In line 12, document.querySelector('#items').innerHTML is selecting the ID "items" and setting it to document.getElementsByTagName('li').length, which represents the length of the list aka the number of items in the list.
+
 * **What color would the background of this page be <u>if there were no JavaScript in this page</u>?**
+
+If there were no JavaScript on this page, the background of the page would be white/default.
 
 * **Why are there a couple of gray boxes on the screen with a different colored border? How could you edit this code to make them a different color? Explain briefly. Then edit the code to make those boxes some shade of blue, of your choosing.**
 
+The boxes are all text that is contained in the <p> tag. The <p> tag is styled to have background color and border with color. You can change the hex codes to change the color.
+
+```html
+p{
+	background-color: #4d8cbc;
+	border: 3px solid #053a63;
+	padding: 3%;
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+```
+
 * **Edit the code so that, if you highlight `McGill University` and copy it, you see the text `O Canada` near the bottom of the page. Briefly explain why you made the edits that you did -- how did you know/figure out what to do?**
+
+I knew that when I highlight "University of Michigan" and copy it, "go blue" appears at the bottom of the page. So I saw that the HTML where University of Michigan is calls the function copyFunction on the action "oncopy" and then the div with the "cheer" ID displays it on the page. So I created a second function copyFunctionMcGill and called it oncopy of McGill University. Also added a div with the ID from my new function to display on page.
+
+```html
+	<li oncopy = "copyFunctionMcGill()">McGill University</li>
+	<div id="ocanada">
+	</div>
+
+```
+
+```js
+	function copyFunctionMcGill(){
+	document.querySelector('#ocanada').innerHTML += "O Canada<br>"
+	}
+```
+
 
 * **In the original code, when you click the button that says `Wow`, you see a text box! Wow. Explain briefly in your own words why the following code causes that to happen:**
 
@@ -151,13 +177,24 @@ function handleClick(){
 ```
 **and**
 
-```js
+```html
 <button onclick=handleClick() id="wow-button">Wow</button>
 ```
 
-
+When you click the button "Wow" the button has the "onclick" action that calls the function "handleClick". The handleClick function, when called, displays an alert (aka the text box) with the text "hello" in it as specified in the alert function.
 
 * **Knowing what you learned from the previous question, add code/markup to the `jsPracticeLab.html` file *so that* there is a button with the text `Spring Equinox 2019` on it somewhere on the page, and when that button is clicked, a text box containing the text `March 20, 2019` appears. (There's no function -- that I am aware of -- to automatically get this info, you've got to type it yourself.)**
+
+```js
+	function equinox(){
+		alert("March 20, 2019")
+	}
+```
+
+```html
+	<button onclick=equinox() id="equinox-button">Spring Equinox 2019</button>
+```
+
 
 
 
