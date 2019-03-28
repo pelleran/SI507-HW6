@@ -31,7 +31,7 @@ Below are a bunch of questions and indications of things to do. For each indicat
 
 * done - Fork (and clone) this repository
 * done - Add our instructional team as a collaborator to your fork (see instructions for adding collaborators on Canvas)
-* Edit this `README.md` file with answers to the questions/prompts, briefly, using Markdown formatting so that the questions appear in bulletpoints and the answers appear clearly below each respective question, *not* as bulletpoints.
+* done - Edit this `README.md` file with answers to the questions/prompts, briefly, using Markdown formatting so that the questions appear in bulletpoints and the answers appear clearly below each respective question, *not* as bulletpoints.
 * done - Add all names of those who worked on this (as indicated below)
 * Make the changes that are indicated below to each of the `.html` files with JavaScript programs provided. (You'll probably do this concurrently with answering questions)
 * Commit (as you go) and push your changes to all three files to your GitHub forked repository.
@@ -140,7 +140,7 @@ If there were no JavaScript on this page, the background of the page would be wh
 
 The boxes are all text that is contained in the <p> tag. The <p> tag is styled to have background color and border with color. You can change the hex codes to change the color.
 
-```html
+```css
 p{
 	background-color: #4d8cbc;
 	border: 3px solid #053a63;
@@ -204,11 +204,42 @@ When you click the button "Wow" the button has the "onclick" action that calls t
 
 * **When you enter input that isn't valid, you see an error that is red. Why is the error in red? Why is the response for valid inputs blue?**
 
+The error is red and the valid inputs are blue because the class error is red and the class good is blue. When it is an error, the <p> is class .error and when it is valid, the <p> is class good.
+
+```html
+<style type="text/css">
+    .error{
+        color: red;
+    }
+    .good {
+        color: blue;
+    }
+</style>
+```
+
 * **What is this line `var regex = /^[a-zA-Z]+$/;` helping with? And if you googled something to figure that out, what did you google, and what, briefly, did you learn? (If you didn't need to google, you can leave that out, but explain briefly what that line is helping the program do, anyway.)**
+
+I already knew that this stood for regular expression. I think it means that it is checking for text [a-zA-Z] and then...Google...https://www.rexegg.com/regex-quickstart.html.
+
+/ is Escapes a special character
+^ is 	Start of string or start of line
+[a-zA-Z] Range indicator [] containing all lowercase and uppercase letters
++ is One or more
+$ is 	End of string or end of line
+
+Basically this expression is checking the characters to see if there are only letters or if other characters, so it's not one word if there's more than letters.
+
+but...don't some words have hyphens? and accents? should it also allow hypens and accents? :)
 
 * **What's different about the syntax of conditional statements in JavaScript, compared to Python?**
 
+The "if" condition is contained in () and the action to do if the "if" is true, is contained in {}. Indentation doesn't matter. The else can begin on the same line as the closing } from the if. The else is also contained in {}. The end of lines have to end with ;
+
+In Python, an if condition ends with : and the action is indented on the next lines, where indented is required. The else always starts on its own line and ends with : also.
+
 * **What do you think the `10000` refers to in the code `.fadeOut(10000)`?**
+
+The code refers to how long it should take for the text to fade. I looked at https://www.w3schools.com/jquery/eff_fadeout.asp and it means milliseconds. So, to fade, it will increment slowly, taking 10,000 milliseconds.
 
 * **What do you think is going on with the following code at the beginning of the program? Note that the most important thing to do for answering this question is to be thoughtful and clear, not to be absolutely correct:**
 
@@ -217,6 +248,17 @@ $(document).ready(function(){
     $("form").submit(function(event){
 ```
 
+The quoted code is a function that runs if the "document" (page) is loaded (ready). Then, when it is ready, the next function runs when the form has been submitted (user clicking the submit button>>>the "event"), and does the check with the regex to see if it was one word or not.
+
 
 * **Add some code to the `jquerylib_submit_example.html` file so that, if the input is valid and is specifically the text `hello`, rather than the visible output being `Nice!` in blue, the visible output should be `Hello to you too!`, also in blue, just like `Nice!` is.**
 	* *HINT:* You'll have to make some changes to the conditional statement, and possibly look up some JavaScript conditional syntax. You'll also need to look carefully at what generates visible output right now.
+
+	I made this change. However, I also noticed my fadeout seems to be going waaay too fast, I am not sure why. But the correct text does appear!
+
+```js
+else if (currentValue==="hello"){
+$("#result").html('<p class="good">Hello to you too!</p>').show().fadeOut(10000);
+
+}
+```
