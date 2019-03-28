@@ -33,9 +33,9 @@ Below are a bunch of questions and indications of things to do. For each indicat
 * done - Add our instructional team as a collaborator to your fork (see instructions for adding collaborators on Canvas)
 * done - Edit this `README.md` file with answers to the questions/prompts, briefly, using Markdown formatting so that the questions appear in bulletpoints and the answers appear clearly below each respective question, *not* as bulletpoints.
 * done - Add all names of those who worked on this (as indicated below)
-* Make the changes that are indicated below to each of the `.html` files with JavaScript programs provided. (You'll probably do this concurrently with answering questions)
-* Commit (as you go) and push your changes to all three files to your GitHub forked repository.
-* Submit a link to your repository on Canvas. (This HW doesn't have an autograder -- it will be graded by hand/by humans this time.)
+* done - Make the changes that are indicated below to each of the `.html` files with JavaScript programs provided. (You'll probably do this concurrently with answering questions)
+* doing - Commit (as you go) and push your changes to all three files to your GitHub forked repository.
+* doing - Submit a link to your repository on Canvas. (This HW doesn't have an autograder -- it will be graded by hand/by humans this time.)
 
 ### Important notes
 * You are *more than* welcome to work together on this, but **you must <u>each</u> submit a repo to be graded on it**, so if you do work together, you should do the following:
